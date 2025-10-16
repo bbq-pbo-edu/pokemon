@@ -4,9 +4,6 @@ require_once '../config/loader.php';
 
 $request = explode('/', strtolower(trim($_SERVER['REQUEST_URI'], '/')));
 
-var_dump($request);
-echo "<br>";
-
 $entity = $request[0] ?? null;
 $method = $request[1] ?? null;
 $id = $request[2] ?? null;
@@ -35,6 +32,12 @@ else if ($entity === 'pokemon' && $method === 'update') {
 }
 else if ($entity === 'pokemon' && $method === 'delete') {
     require_once '../src/pokemon/delete.php';
+}
+else if ($entity === 'pokemon' && $method === 'edit') {
+    require_once '../src/pokemon/edit.php';
+}
+else if ($entity === 'pokemon' && $method ==='add') {
+    require_once '../src/pokemon/add.php';
 }
 else if ($entity === '404') {
     require_once '../view/404.php';

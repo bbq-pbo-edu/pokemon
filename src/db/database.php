@@ -12,7 +12,7 @@ function createDBConnection(string $host=DB_HOST, string $user=DB_USER, string $
 
 function findAll(string $tableName): array {
     $conn = createDBConnection();
-    $stmt = $conn->prepare("SELECT * FROM $tableName ORDER BY id");
+    $stmt = $conn->prepare("SELECT * FROM $tableName");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

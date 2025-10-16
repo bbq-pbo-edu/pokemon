@@ -18,9 +18,9 @@ function createTable(array $records, bool $withHeaders=false): string {
         foreach($record as $key => $value) {
             $htmlString .= '<td>' . $value . '</td>';
         }
-        $actionLink = "<td><a href='http://www.pokemon.patrick.web.bbq/pokemon/show/{$record['id']}><button>Details</button>";
+        $actionLink = "<td><a href='/pokemon/show/{$record['id']}'><button>Details</button></a></td>";
         $htmlString .= $actionLink;
-        $htmlString .= '</td></tr>';
+        $htmlString .= '</tr>';
     }
     $htmlString .= '</tbody>';
 

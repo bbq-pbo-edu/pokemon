@@ -2,7 +2,7 @@
 
 echo 'delete' . '<br>';
 
-deleteById('pokemon', 2);
+deleteById('pokemon', $id);
 
 header('Location: /pokemon/read');
 exit();

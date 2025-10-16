@@ -2,14 +2,10 @@
 
 echo 'update' . '<br>';
 
-$data = [
-    'name' => 'Polkemon',
-    'caught' => 1,
-    'type_1' => 'Feuer',
-    'type_2' => null,
-    'description' => 'test'
-];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $data = $_POST;
+    updateById('pokemon', $id, $data);
 
-updateById('pokemon', 2, $data);
-
-header('Location: /pokemon/show/2');
+    header('Location: /pokemon/show/' . $id);
+    exit();
+}
