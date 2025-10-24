@@ -39,6 +39,11 @@ else if ($entity === 'pokemon' && $method === 'edit') {
 else if ($entity === 'pokemon' && $method ==='add') {
     require_once '../src/pokemon/add.php';
 }
+else if ($entity === 'seed') {
+    seedPokemonTable();
+    header('Location: /pokemon');
+    exit();
+}
 else if ($entity === '404') {
     require_once '../view/404.php';
 }

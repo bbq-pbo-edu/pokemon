@@ -21,6 +21,7 @@ $record = findById('pokemon', $id);
     <a href="http://www.pokemon.patrick.web.bbq/pokemon/read">pokemon/read</a>
 
     <h1><?= $record['name'] ?></h1>
+    <img width="128" height="auto" src="../../assets/images/<?= $record['pokedex_nr']?>.png" alt="pokemon image">
     <h2>Pokédex-Nr.: <?= $record['pokedex_nr'] ?></h2>
     <p><?= $record['description'] ?></p>
     <p>Typ 1: <?= $record['type_1'] ?></p>
